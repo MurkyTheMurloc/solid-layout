@@ -1,0 +1,36 @@
+---
+import {Gap,MarginInline,FlexBasis} from "styles/types/css_types";
+import {
+    dualPanelContainer,
+    sidePanelSize as dualPanelSidePanelSize,
+    mainPanelSize as  dualPanelMainPanelSize,
+    marginInline as dualPanelMarginInline,
+    dualPanelMainPanel,
+    dualPanelSidePanel
+} from "styles/layout/dual_panel.css";
+interface Props{
+    gap:Gap,
+    marginInline?: MarginInline,
+    mainPanelSize?: FlexBasis,
+    sidePanelSize?: FlexBasis,
+}
+const {gap,marginInline,mainPanelSize,sidePanelSize} = Astro.props
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+---
+<div style={assignInlineVars({
+    [gap]:gap,
+    [dualPanelMarginInline]:marginInline,
+})} class={dualPanelContainer}>
+
+    <div style={assignInlineVars({
+        [dualPanelMainPanelSize]: mainPanelSize
+    })} class={dualPanelMainPanel}>
+       <slot name="mainPanel"/>
+    </div>
+
+    <div style={assignInlineVars(
+        {[dualPanelSidePanelSize]: sidePanelSize}
+    )} class={dualPanelSidePanel}>
+        <slot name="sidePanel"/>
+    </div>
+</div>

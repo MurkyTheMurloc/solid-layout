@@ -1,0 +1,21 @@
+{
+  "name": "testing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node_modules/.bin/vite",
+    "build": "node_modules/.bin/tsc && vite build",
+    "preview": "node_modules/.bin/vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.7.8",
+    "solid-layout": "^1.7.3"
+  },
+  "devDependencies": {
+    "@vanilla-extract/vite-plugin": "^3.9.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-solid": "^2.7.0"
+  }
+}

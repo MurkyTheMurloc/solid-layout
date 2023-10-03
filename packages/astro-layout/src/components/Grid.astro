@@ -1,0 +1,27 @@
+---
+interface Props{
+    gap?: Gap;
+    padding?: Padding;
+    maxColumnWidth?: number;
+    minColumnWidth?: number;
+    autoFill?: "auto-fill" | "auto-fit";
+    AutoBreakPoints?: boolean;
+    breakPointLayout: BreakPointLayout,
+}
+const {gap, padding, maxColumnWidth, minColumnWidth, autoFill, AutoBreakPoints, breakPointLayout} = Astro.props
+import {grid, gridGap, autoFill as gridAutoFill, smColumnWidth, xlColumnWidth} from "styles/layout/grid.css";
+---
+<div
+
+        style={assignInlineVars({
+            [gridGap]: gap,
+            [gridAutoFill]: autoFill,
+            [smColumnWidth]: `${minColumnWidth}px`,
+            [mdColumnWidth]: `${minColumnWidth + 50}px`,
+            [lgColumnWidth]: `${maxColumnWidth - 75}px`,
+            [xlColumnWidth]: `${maxColumnWidth}px`,
+            [xxlColumnWidth]: `${maxColumnWidth + 50}px`,
+        })}
+        class={grid}>
+   <slot/>
+</div>

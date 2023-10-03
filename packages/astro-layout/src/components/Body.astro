@@ -1,0 +1,24 @@
+---
+interface Props{
+    showScrollbar?: boolean;
+}
+const {showScrollbar} = Astro.props
+const  overflow = showScrollbar ? 'auto' : 'hidden'
+---
+<div>
+    <slot/>
+</div>
+
+<style is:global>
+
+    html {
+        height: 100%;
+        margin: 0;
+        overflow: overflow;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+        overflow: overflow;
+    }
+</style>

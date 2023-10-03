@@ -1,0 +1,22 @@
+---
+import {flexibleGrid} from "styles/layout/flexible_grid.css";
+interface Props{
+    gap?: Gap;
+    padding?: Padding;
+}
+const {gap, padding} = Astro.props
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+---
+
+<div id="reelGrid" style={assignInlineVars({
+    [gap]: gap,
+    [padding]: padding
+})} class={flexibleGrid}>
+   <slot/>
+</div>
+
+<style>
+    #reelGrid > div {
+        flex: 1;
+    }
+</style>

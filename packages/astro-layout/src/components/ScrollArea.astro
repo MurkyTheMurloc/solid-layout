@@ -1,0 +1,16 @@
+---
+import {Height} from "styles/types/css_types";
+interface Props{
+    scrollbar: "none" | "auto" | "thin",
+    height?: Height;
+}
+import {scrollArea, scrollBar as scrollAreaScrollbar,height as scrollAreaHeight, } from "styles/layout/scroll_area.css";
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+---
+
+<div class={scrollArea} style={assignInlineVars({
+    [scrollAreaScrollbar]: scrollbar,
+    [scrollAreaHeight]: height
+})}>
+<slot/>
+</div>

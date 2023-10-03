@@ -1,0 +1,17 @@
+---
+interface Props{
+    gap?: Gap;
+    padding?: Padding;
+    columns?: Columns;
+}
+const {gap, padding, columns} = Astro.props
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+import {autoGrid, gap as autoGridGap ,columns as autoGridColumns, padding  as autoGridPadding} from "styles/layout/auto_grid.css";
+---
+<div class={autoGrid} style={assignInlineVars({
+    [autoGridGap]: gap,
+    [autoGridPadding]: padding,
+    [autoGridColumns]:columns
+})}>
+  <slot/>
+</div>

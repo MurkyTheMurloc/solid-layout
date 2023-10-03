@@ -1,0 +1,21 @@
+---
+import {FlexDirection, Gap, Padding} from "styles/types/css_types";
+interface Props {
+    gap?: Gap
+    padding?: Padding
+    direction?: FlexDirection
+}
+const {gap,padding,direction} = Astro.props
+import {stack, gap,padding,direction} from "styles/layout/stack.css"
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+---
+
+<div style={
+    assignInlineVars({
+        gap: gap,
+        padding: padding,
+        direction: direction
+    })
+} class={stack}>
+    <slot/>
+</div>

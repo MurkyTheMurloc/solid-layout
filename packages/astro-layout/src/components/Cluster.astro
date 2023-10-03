@@ -1,0 +1,15 @@
+---
+interface Props{
+    gap?: Gap;
+    padding?: Padding;
+}
+const {gap, padding} = Astro.props
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+import {cluster, gap as clusterGap, padding as clusterPadding} from "styles/layout/cluster.css";
+---
+<div style={assignInlineVars({
+    [clusterGap]: props.gap as string,
+    [clusterPadding]: props.padding as string,
+})} class={cluster}>
+    <slot/>
+</div>

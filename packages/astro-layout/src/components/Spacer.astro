@@ -1,0 +1,18 @@
+---
+import {Size} from "styles/types/css_types";
+interface Props{
+    width?: Size;
+    height?: Size;
+}
+const {width, height} =Astro.props
+
+import {spacer, width as spacerWidth,height as spacerHeight} from "styles/layout/spacer.css";
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+---
+
+<div class={spacer} style={
+    assignInlineVars({
+        [spacerWidth]: width,
+        [spacerHeight]: height
+    })
+}/>

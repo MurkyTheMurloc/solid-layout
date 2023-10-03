@@ -1,0 +1,56 @@
+---
+import {Gap,Padding,ScrollPadding,ScrollSnapType,ScrollBehavior,GridAutoFlow,Overflow,GridAutoColumns} from "styles/types/css_types";
+import {
+    reelGrid,
+    gap as reelGridGap,
+    padding as reelGridPadding,
+    direction as reelGridDirection,
+    scrollPadding as reelGridScrollPadding,
+    scrollType as reelGridScrollType,
+    scrollBehavior as reelGridScrollBehavior,
+    scrollAlignment as reelGridScrollAlignment,
+    scrollType as reelGridScrollType,
+    gridAutoColumns as reelGridGridAutoColumns,
+    overFlowX as reelGridOverFlowX,
+    overFlowY as reelGridOverFlowY,
+    breakPointDirection as reelGridBreakPointDirection,
+    breakpointAutoColumns as reelGridBreakPointGridAutoColumns,
+
+} from "styles/layout/reel_grid.css";
+import {assignInlineVars} from "@vanilla-extract/dynamic";
+interface Props{
+    gap?: Gap;
+    padding?: Padding;
+    scrollPadding?: ScrollPadding;
+    scrollSnapType?: ScrollSnapType;
+    scrollBehavior?: ScrollBehavior;
+    scrollAlignment?: ScrollBehavior;
+    scrollType?: ScrollSnapType;
+    direction?: GridAutoFlow;
+    gridAutoColumns?: GridAutoColumns;
+    overFlowX?: Overflow;
+    overFlowY?: Overflow;
+    breakPointDirection?: GridAutoFlow;
+    breakPointGridAutoColumns?: GridAutoColumns;
+}
+const {gap,padding,scrollPadding,scrollSnapType,scrollBehavior,scrollAlignment,scrollType,direction,gridAutoColumns,overFlowX,overFlowY,breakPointDirection,breakPointGridAutoColumns} = Astro.props
+---
+
+<div style={assignInlineVars({
+    [reelGridGap]: gap,
+    [reelGridPadding]: padding,
+    [reelGridScrollPadding]: scrollPadding,
+    [reelGridScrollBehavior]: scrollBehavior,
+    [reelGridScrollType]: scrollType,
+    [reelGridDirection]: direction,
+    [reelGridGridAutoColumns]: gridAutoColumns,
+    [reelGridOverFlowX]: overFlowX,
+    [reelGridOverFlowY]: overFlowY,
+    [reelGridBreakPointGridAutoColumns]: breakPointGridAutoColumns,
+    [reelGridBreakPointDirection]: breakPointDirection,
+    [reelGridScrollAlignment]: scrollAlignment,
+
+})}
+     class={reelGrid}>
+  <slot/>
+</div>

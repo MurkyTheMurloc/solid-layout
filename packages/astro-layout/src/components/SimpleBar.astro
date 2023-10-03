@@ -1,0 +1,36 @@
+---
+import {Width, Height} from "styles/types/css_types";
+interface Props{
+    position?: "top" | "bottom" | "left" | "right";
+    height?: Height;
+    width?: Width;
+}
+import {simpleBar, height as simpleBarHeight, width as simpleBarWidth,top,left,bottom,right} from "styles/layout/simple_bar.css"
+
+function calculatePosition(position: "top" | "bottom" | "left" | "right" = "top") {
+    switch (position) {
+        case "top":
+            return {[top]: "0px", [left]: "0px", [right]: "auto", [bottom]: "auto"};
+        case "bottom":
+            return {[top]: "auto", [left]: "0px", [right]: "0px", [bottom]: "0px"};
+        case "left":
+            return {[top]: "0px", [left]: "0px", [right]: "auto", [bottom]: "auto", position: "fixed"};
+        case "right":
+            return {[top]: "0px", [left]: "auto", [right]: "0px", [bottom]: "auto"};
+        default:
+            return {[top]: "0px", [left]: "0px", [right]: "auto", [bottom]: "auto"};
+    }
+}
+const  {position, height, width} = Astro.props
+
+const  calculatedPosition = calculatePosition(position)
+---
+
+
+<div style={assignInlineVars({
+    [simpleBarHeight]: height,
+    [simpleBarWidth]: width,
+    ...calculatedPosition
+})} class={simpleBar}>
+  <slot/>
+</div>
