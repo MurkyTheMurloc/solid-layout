@@ -1,8 +1,10 @@
 import {globalStyle} from "@vanilla-extract/css";
 
-globalStyle(".solid-layout-center",{
+
+
+globalStyle(".solid-layout-left",{
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
     textAlign: "center",
 });

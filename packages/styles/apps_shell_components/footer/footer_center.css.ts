@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import {globalStyle} from "@vanilla-extract/css";
 
 
-export const footerMain = style({
+globalStyle(".solid-layout-app-shell-footer-center",{
     gridArea: "footer-center"
 })

@@ -25,3 +25,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.solid-layout-stack{
+    color: green;
+    border: "1px solid white"
+}

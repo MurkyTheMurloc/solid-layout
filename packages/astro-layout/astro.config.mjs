@@ -1,7 +1,12 @@
 import { defineConfig } from 'astro/config';
 import vanillaExtract from 'astro-vanilla-extract';
+import rollup from "astro-rollup";
 
-// https://astro.build/config
+
+
 export default defineConfig({
-    integrations: [vanillaExtract()],
+    integrations: [vanillaExtract({
+        emitCssInSsr: true,
+    })],
+
 });

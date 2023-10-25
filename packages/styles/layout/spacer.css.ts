@@ -1,9 +1,10 @@
-import {createVar, fallbackVar, style} from '@vanilla-extract/css'
+import {createVar, fallbackVar, globalStyle, style} from '@vanilla-extract/css'
 
 export const width = createVar(
 )
 export const height = createVar()
-export const spacer = style({
+
+globalStyle(".solid-layout-spacer",{
     width: fallbackVar(width, "0px"),
-    height: fallbackVar(height, "0"),
+    height: fallbackVar(height, "0px"),
 })

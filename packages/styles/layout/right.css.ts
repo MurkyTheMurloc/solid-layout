@@ -1,11 +1,15 @@
 import {globalStyle} from "@vanilla-extract/css";
 
-globalStyle(".solid-layout-center",{
+
+
+
+globalStyle(".solid-layout-right",{
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
     textAlign: "center",
 });
+
 
 
 

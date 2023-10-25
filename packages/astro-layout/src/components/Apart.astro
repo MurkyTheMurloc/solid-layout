@@ -1,11 +1,17 @@
 ---
-import {apart} from "styles/layout/center.css";
+
 ---
 
 
-<div
-        class={apart}
-
->
+<div class={apart}>
    <slot/>
 </div>
+<style>
+    .apart {
+        display: flex;
+        justify-content: space-between;
+       align-items: center;
+       text-align: center;
+
+    }
+</style>

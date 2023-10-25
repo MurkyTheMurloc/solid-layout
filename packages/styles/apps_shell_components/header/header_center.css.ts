@@ -1,22 +1,22 @@
-import {createVar, style} from "@vanilla-extract/css";
-import {appShell} from "../../layout/app_shell.css";
+import {createVar,globalStyle} from "@vanilla-extract/css";
+import { appShellContainer } from "../../layout/app_shell.css";
 
 export const displayValue = createVar()
-export const headerCenter = style({
+globalStyle(".solid-layout-app-shell-header-center",{
     gridArea: "header-center",
 
     "@container": {
-        [`${appShell}  (max-width: 768px)`]: {
+        [`${appShellContainer} (max-width: 768px)`]: {
             display: "none"
         },
     }
 });
 
-export const headerCenterBurgerMenu = style({
+globalStyle(".solid-layout-app-shell-header-center-burger-menu",{
     gridArea: "header-center",
     display: "none",
     "@container": {
-        [`${appShell}  (max-width: 768px)`]: {
+        [`${appShellContainer} (max-width: 768px)`]: {
             display: displayValue
         },
     }

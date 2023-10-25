@@ -1,10 +1,11 @@
-import {style} from "@vanilla-extract/css";
-import {appShell} from "../../layout/app_shell.css";
+import {globalStyle} from "@vanilla-extract/css";
+import {appShellContainer} from "../../layout/app_shell.css";
 
-export const rightBar = style({
+
+globalStyle(".solid-layout-app-shell-right-bar",{
     gridArea: "bar-right",
     "@container": {
-        [`${appShell}  (max-width: 768px)`]: {
+        [`${appShellContainer}  (max-width: 768px)`]: {
             display: "none"
         },
     }

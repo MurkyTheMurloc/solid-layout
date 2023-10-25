@@ -1,7 +1,7 @@
-import {style} from "@vanilla-extract/css";
+import {globalStyle} from "@vanilla-extract/css";
 
 
-export const pageCenterContainer = style({
+globalStyle(".solid-layout-app-shell-main-container",{
     display: "grid",
     gridArea: "main-container",
     gridTemplateColumns: "auto minmax(0,1fr) auto",

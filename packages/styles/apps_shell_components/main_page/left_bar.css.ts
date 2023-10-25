@@ -1,10 +1,11 @@
-import {style} from "@vanilla-extract/css";
-import {appShell} from "../../layout/app_shell.css";
+import {globalStyle} from "@vanilla-extract/css";
+import {appShellContainer} from "../../layout/app_shell.css";
 
-export const leftBar = style({
+
+globalStyle(".solid-layout-app-shell-left-bar",{
     gridArea: "bar-left",
     "@container": {
-        [`${appShell}  (max-width: 768px)`]: {
+        [`${appShellContainer}  (max-width: 768px)`]: {
             display: "none"
         },
     }

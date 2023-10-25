@@ -1,5 +1,5 @@
-import {style} from "@vanilla-extract/css";
+import {globalStyle} from "@vanilla-extract/css";
 
-export const footerLeft = style({
+globalStyle(".solid-layout-app-shell-footer-left",{
     gridArea: "footer-left",
 });

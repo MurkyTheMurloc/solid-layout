@@ -1,6 +1,7 @@
-import {style} from "@vanilla-extract/css";
+import {globalStyle} from "@vanilla-extract/css";
+import {appShellContainer} from "../../layout/app_shell.css";
 
-export const mainPageCenterContainer = style({
+globalStyle(".solid-layout-app-shell-main-page-container",{
     display: "grid",
     gridArea: "main-center-container",
     gridTemplateColumns: "minmax(0,1fr)",
@@ -11,10 +12,10 @@ export const mainPageCenterContainer = style({
     gap: "0rem",
 
     "@container": {
-        "@media (min-width: 640px)": {
+        [`${appShellContainer} (min-width: 640px)`]: {
             gap: "1rem",
         },
-        "@media (min-width: 768px)": {
+        [`${appShellContainer}(min-width: 768px)`]: {
             gap: "1rem",
         },
     }

@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import {globalStyle} from "@vanilla-extract/css";
 
-export const headerContainer = style({
+globalStyle(".solid-layout-app-shell-header-container",{
     gridArea: "header-container",
     display: "grid",
     gridTemplateAreas: `"header-left header-center header-right"`,

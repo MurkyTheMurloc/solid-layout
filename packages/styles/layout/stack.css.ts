@@ -1,11 +1,13 @@
-import {createVar, fallbackVar, style} from "@vanilla-extract/css";
+import {createVar, fallbackVar, style, createGlobalTheme, globalStyle} from "@vanilla-extract/css";
 
 export const gap = createVar()
 
 export const direction = createVar()
 
 export const padding = createVar()
-export const stack = style({
+
+
+globalStyle('.solid-layout-stack',  {
     display: "flex",
     flexDirection: fallbackVar(direction, "column"),
     gap: fallbackVar(gap, "1rem"),

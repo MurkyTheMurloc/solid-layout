@@ -1,11 +1,11 @@
-import {createVar, fallbackVar, style} from "@vanilla-extract/css";
+import {createVar, fallbackVar, globalStyle} from "@vanilla-extract/css";
 
 export const gap = createVar();
 export const padding = createVar();
 export const marginInline = createVar();
 export const mainPanelSize = createVar();
 export const sidePanelSize = createVar();
-export const dualPanelContainer = style({
+globalStyle(".solid-layout-dual-panel",{
     display: "flex",
     flexWrap: "wrap",
     alignItems: "start",
@@ -13,12 +13,12 @@ export const dualPanelContainer = style({
     gap: fallbackVar(gap, "1rem"),
 });
 
-export const dualPanelMainPanel = style({
+globalStyle(".solid-layout-main-panel",{
     flexBasis: fallbackVar(mainPanelSize, "500px"),
     flexGrow: 9999,
 });
 
-export const dualPanelSidePanel = style({
+globalStyle(".solid-layout-side-panel",{
     flexBasis: fallbackVar(sidePanelSize, "300px"),
     flexGrow: 1,
 });

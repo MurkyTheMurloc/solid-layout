@@ -1,14 +1,21 @@
 
-import {ExampleAppShell} from "./components/example_app_shell/example_app_shell.tsx";
-
+import {Stack} from "solid-layout";
+import  "./App.css";
 function App() {
 
 
   return (
-    <>
-   <ExampleAppShell/>
-    </>
-  )
+      <><Stack gap={"6rem"} direction={"row"}>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+      </Stack>
+          <Stack gap={"1rem"} direction={"column"}>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+      </Stack></>
+  );
 }
 
 export default App

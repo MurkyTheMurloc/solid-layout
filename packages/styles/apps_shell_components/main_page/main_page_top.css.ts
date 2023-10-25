@@ -1,16 +1,17 @@
-import {createVar, style} from "@vanilla-extract/css";
-import {appShell} from "../../layout/app_shell.css";
+import {createVar, globalStyle} from "@vanilla-extract/css";
+import {appShellContainer} from "../../layout/app_shell.css";
+
 
 export const mainPageTopBreakPoint = createVar();
-export const mainPageTop = style({
+globalStyle(".solid-layout-app-shell-main-page-top",{
     gridArea: "app-shell-main-page-container-top",
     display: "none",
     "@container": {
-        [`${appShell}  (max-width: 768px)`]: {
+        [`${appShellContainer} (max-width: 768px)`]: {
             display: mainPageTopBreakPoint,
 
         },
-        [`${appShell}  (min-width: 768px)`]: {
+        [`${appShellContainer} (min-width: 768px)`]: {
             display: "none"
         }
     }

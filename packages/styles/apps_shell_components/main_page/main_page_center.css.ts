@@ -1,5 +1,5 @@
-import {style} from "@vanilla-extract/css";
+import {globalStyle} from "@vanilla-extract/css";
 
-export const mainPageCenter = style({
+globalStyle(".solid-layout-app-shell-main-page-center",{
     gridArea: "app-shell-main-page-container-center"
 })
